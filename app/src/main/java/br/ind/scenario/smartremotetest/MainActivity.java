@@ -1,5 +1,6 @@
 package br.ind.scenario.smartremotetest;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -23,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
                 .withListener(new AppUpdaterUtils.UpdateListener() {
                     @Override
                     public void onSuccess(Update update, Boolean isUpdateAvailable) {
+                        try {
+                            Log.d("Current Version", getPackageManager().getPackageInfo(getPackageName(), 0).versionName);
+                        } catch (PackageManager.NameNotFoundException e) {
+                            e.printStackTrace();
+                        }
                         Log.d("Latest Version", update.getLatestVersion());
                         Log.d("URL", String.valueOf(update.getUrlToDownload()));
                         Log.d("Is update available?", Boolean.toString(isUpdateAvailable));
