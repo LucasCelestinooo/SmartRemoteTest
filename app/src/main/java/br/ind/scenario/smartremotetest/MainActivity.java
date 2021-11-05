@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Update update, Boolean isUpdateAvailable) {
                         Log.d("Latest Version", update.getLatestVersion());
-                        Log.d("Latest Version Code", String.valueOf(update.getLatestVersionCode()));
                         Log.d("URL", String.valueOf(update.getUrlToDownload()));
                         Log.d("Is update available?", Boolean.toString(isUpdateAvailable));
                     }
@@ -37,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
         appUpdaterUtils.start();
 
-        new AppUpdater(this)
-                .setTitleOnUpdateAvailable("Update available")
-                .setContentOnUpdateAvailable("Check out the latest version available of my app!")
-                .setTitleOnUpdateNotAvailable("Update not available")
-                .setContentOnUpdateNotAvailable("No update available. Check for updates again later!")
-                .setButtonUpdate("Update now?")
-                .setButtonDismiss("Maybe later")
-                .setButtonDoNotShowAgain("Huh, not interested")
-                .setCancelable(false).start();
+//        new AppUpdater(this)
+//                .setTitleOnUpdateAvailable("Update available")
+//                .setContentOnUpdateAvailable("Check out the latest version available of my app!")
+//                .setTitleOnUpdateNotAvailable("Update not available")
+//                .setContentOnUpdateNotAvailable("No update available. Check for updates again later!")
+//                .setButtonUpdate("Update now?")
+//                .setButtonDismiss("Maybe later")
+//                .setButtonDoNotShowAgain("Huh, not interested")
+//                .setCancelable(false).start();
 
     }
 }
